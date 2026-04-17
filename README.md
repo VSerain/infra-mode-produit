@@ -17,6 +17,7 @@ Nous comprenons que les équipes SI ont des **obligations historiques** :
 * Processus de validation et de contrôle hérités.
 
 Notre objectif est de **trouver ensemble** comment fonctionner en **agile** grâce à un accès **accès ciblé et encadré** à certaines couches de l’infra **sans compromettre la sécurité et la stabilité des systèmes et en s'intégrant dans les processus DSI**.
+toto
 
 ### 1.2. Pourquoi ce document ?
 
