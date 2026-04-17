@@ -1,5 +1,5 @@
 # Accès à l'infrastructure pour un projet en mode produit (Lean Startup/BetaGouv)
-Document visant à expliquer les besoins d'acces a l'infra dans un produit (Mode produit, LeanStartup) ainsi que les justifications qui explique ces besoins
+Document visant à expliquer les besoins d'accès à l'infra dans un produit (Mode produit, LeanStartup) pour l'équipe de développement ainsi que les justifications qui expliquent ces besoins
 
 
 ***
@@ -26,9 +26,9 @@ Ce document vise à :
 
 * **Expliquer** pourquoi ces accès sont pertinents pour une approche produit itérative (ex. : SAMI).
 
-* **Proposer un cadre** pour rassurer les équipes SI : traçabilité, principe de moindre privilège, audit.
+* **Proposer un cadre** acceptable par les équipes DSI : traçabilité, principe de moindre privilège, audit.
 
-* **Trouver un équilibre** entre le "mode produit idéal" (accès total) et les réalités structurelles.
+* **Trouver un équilibre** entre un fonctionnement en "mode produit idéal" (accès total) et les contraintes structurelles et organisationnelles induites pour le bon fonctionnement du SI de l'établissement.
 
 ***
 
@@ -42,23 +42,23 @@ Un projet en mode produit agile (Lean Startup, DevOps) **nécessite une infra to
 
 * **Exemple** : Si les développeurs itèrent rapidement mais doivent attendre des semaines pour un déploiement ou un accès aux logs, **l’agilité perd tout son sens**.
 
-### 2.2. L’agilité, c’est aussi (surtout) une question de déploiement
+### 2.2. L’agilité, c’est aussi (et surtout) une question de déploiement
 
 * **Principe Lean Startup** : "Construire, Mesurer, Apprendre" (Eric Ries). **Sans accès aux logs, au monitoring et à un déploiement rapide, impossible de "mesurer" et d’apprendre"** en temps réel.
 
-* **Risque** : Les freins infrastructurels transforment l’agilité en **poudre aux yeux** : on développe en agile, mais on déploie en cycle en V.
+* **Risque** : Les freins liés à l'infrastructure peuvent transformer l’agilité en **poudre aux yeux** : on développe de manière continue en agile, mais on déploie en cycle en V.
 
-* **Conséquence** : Perte de réactivité, frustration des équipes, et **annulation des gains d’efficacité** attendus.
+* **Conséquence** : Perte de réactivité sur la prise en compte des retours utilisateurs, , frustration des équipes, et **annulation des gains d’efficacité** du développement continu.
 
 ### 2.3. L’hybridation comme solution
 
 * **Objectif** : Trouver un **modèle hybride** où l’infra s’adapte aux besoins du produit agile, **sans sacrifier la sécurité**.
 
-* **Exemple** : Donner aux devs un accès **ciblé et contrôlé** aux couches applicatives (logs, monitoring, déploiement en staging), tout en gardant les couches basses (hardware, VM) sous contrôle SI.
+* **Exemple** : Donner aux développeurs un accès **ciblé et contrôlé** aux couches applicatives (logs, monitoring, déploiement en staging), tout en gardant les couches basses (hardware, VM) sous contrôle des équipes d'infrastructure de la DSI.
 
 ***
 
-## 3. Besoins d’accès : Ce qui est critique, optionnel, non nécessaire
+## 3. Besoins d’accès : Ce qui est critique, optionnel, non nécessaire pour les développeurs
 
 ### 3.1. Couches de l’infra et besoins associés
 
