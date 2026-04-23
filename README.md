@@ -146,6 +146,19 @@ Un projet en mode produit agile (Lean Startup, DevOps) **nécessite une infra to
 
 * **Validation manuelle** requise pour les déploiements critiques.
 
+### 5.5. Documentation claire des procédures et outils disponibles
+
+Des documentations et procédures claires évitent que les connaissances restent dans la tête d'une seule personne. Elles donnent à la SI un suivi précis des accès et des procédures. Elles permettent aux devs de gérer seuls les tâches courantes, sans solliciter quelqu'un à chaque fois.
+
+### 5.5.1. Côté SI, cadrage et traçabilité :
+* **Procédures d'accès formalisées** : qui accède à quoi et comment, circuit de demande.
+* **Liste des outils standards** : liste des outils de logs, monitoring, déploiement, bases de données et autre services déjà en place ou autorisés
+* **Documentation des pipelines** : étapes de validation, rôles et responsabilités.
+
+### 5.5.2. Côté produit
+* **Documentations opérationnels** : procédures pour les actions courantes (redémarrer un conteneur, consulter les logs, lancer un déploiement en staging, rollback).
+* **Guide d'onboarding** : documenttion complète pour un nouvel arrivant (accès à demander, outils à installer, premiers pas, bonnes pratiques).
+
 ***
 
 ## 6. Exemples concrets et retours d’expérience
@@ -175,10 +188,11 @@ Un projet en mode produit agile (Lean Startup, DevOps) **nécessite une infra to
 | Étape | Action                                                                   | Responsable         |
 | ----- | ------------------------------------------------------------------------ | ------------------- |
 | 1     | Audit des besoins réels avec les devs et la SI.                          | SI + Équipe produit |
-| 2     | Mise en place d’un accès en lecture aux logs/monitoring (env. non-prod). | SI                  |
-| 3     | Formation des devs aux bonnes pratiques de sécurité.                     | SI                  |
-| 4     | Déploiement autonome en staging via pipeline CI/CD.                      | SI + Devs           |
-| 5     | Évaluation et ajustement (feedback, audit).                              | SI + Équipe produit |
+| 2     | Rédaction de la documentation initiale : procédures d'accès, cartographie des outils, runbooks de base, guide d'onboarding. | SI + Équipe produit |
+| 3     | Mise en place d’un accès en lecture aux logs/monitoring (env. non-prod). | SI                  |
+| 4     | Formation des devs aux bonnes pratiques de sécurité.                     | SI                  |
+| 5     | Déploiement autonome en staging via pipeline CI/CD.                      | SI + Devs           |
+| 6     | Évaluation et ajustement (feedback, audit, mise à jour de la documentation).                              | SI + Équipe produit |
 
 ***
 
