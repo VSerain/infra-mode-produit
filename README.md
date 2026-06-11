@@ -71,12 +71,8 @@ Un projet en mode produit agile (Lean Startup, DevOps) **nécessite une infra to
 | **Logs & Monitoring** (Grafana, ELK, Prometheus) | ✅ **Oui** (lecture temps réel)                            | Comprendre les bugs, surveiller les performances. Ex. : Identifier une erreur 500 en prod.                                 | **Critique**                                   |
 | **Services tiers** (FTP, APIs externes, serveur mail)          | ✅ **Oui** (visibilité, redémarrage)                    | Diagnostiquer des pannes (ex. : fichier non transféré) et relancer un service.                                            | Optionnel (peut être contourné temporairement) |
 | **Déploiement en production**                    | ✅ **Oui** (via pipeline automatisé + validation)          | Autonomie pour livrer des corrections **sans attendre un processus manuel**.                                               | **Critique**                                   |
-| **sauvegarde** (dump,snapshot ) | ✅ **Oui** (lecture)                            | 
-vérifier l'existence de sauvegarde quotidienne, restaurer une version corrompue
-| optionnel 
-| **certificats** (dns, https) | ✅ **Oui** (lecture, remplacement)                            | 
-vérifier la validité, remplacer un certificat expiré. 
-| **Critique** 
+| **sauvegarde** (dump,snapshot ) | ✅ **Oui** (lecture)                            | vérifier l'existence de sauvegarde quotidienne, restaurer une version corrompue | optionnel 
+| **certificats** (dns, https) | ✅ **Oui** (lecture, remplacement)                            | vérifier la validité, remplacer un certificat expiré. | **Critique** 
 
 **→ Résumé** :
 
