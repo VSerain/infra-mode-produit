@@ -1,5 +1,5 @@
-# Accès à l'infrastructure pour un projet en mode produit (Lean Startup/BetaGouv)
-Document visant à expliquer les besoins d'acces a l'infra dans un produit (Mode produit, LeanStartup) ainsi que les justifications qui explique ces besoins
+# Accès à l'infrastructure Kubernates pour un projet en mode produit (Lean Startup/BetaGouv)
+Document visant à expliquer les besoins d'accès a l'infra kubernates dans un produit (Mode produit, LeanStartup) ainsi que les justifications qui explique ces besoins
 
 
 ***
@@ -64,21 +64,27 @@ Un projet en mode produit agile (Lean Startup, DevOps) **nécessite une infra to
 
 | Couche                                           | Besoin d’accès                                            | Justification                                                                                                              | Niveau de criticité                            |
 | ------------------------------------------------ | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| **Hardware** (machines physiques)                | ❌ Non                                                     | Géré par les équipes SI, pas de valeur ajoutée pour les devs.                                                              | Non nécessaire                                 |
-| **Infra bas niveau** (VM, Kubernetes)            | ❌ Non                                                     | Orchestration et gestion des clusters restent du ressort SI.                                                               | Non nécessaire                                 |
+| **Hardware** (machines physiques)                | ❌ Non                                                     | Géré par les équipes DSI, pas de valeur ajoutée pour les devs.                                                              | Non nécessaire                                 |
+| **Infra bas niveau** (VM, Kubernetes)            | ❌ Non                                                     | Orchestration et gestion des clusters restent du ressort DSI.                                                               | Non nécessaire                                 |
 | **Conteneurs applicatifs** (Docker, Pods)        | ✅ **Oui** (déploiement, redémarrage, monitoring basique)  | Permet de déployer des corrections ou nouvelles versions **sans dépendre d’un tiers**. Ex. : Rollback urgent après un bug. | **Critique**                                   |
 | **Bases de données**                             | ✅ **Oui** (lecture en prod, lecture/écriture en non-prod) | Diagnostiquer des incohérences, valider des migrations. Ex. : Vérifier pourquoi une requête est lente.                     | **Critique**                                   |
 | **Logs & Monitoring** (Grafana, ELK, Prometheus) | ✅ **Oui** (lecture temps réel)                            | Comprendre les bugs, surveiller les performances. Ex. : Identifier une erreur 500 en prod.                                 | **Critique**                                   |
-| **Services tiers** (FTP, APIs externes)          | ✅ **Oui** (visibilité, redémarrage)                       | Diagnostiquer des pannes (ex. : fichier non transféré) et relancer un service.                                             | Optionnel (peut être contourné temporairement) |
+| **Services tiers** (FTP, APIs externes, serveur mail)          | ✅ **Oui** (visibilité, redémarrage)                    | Diagnostiquer des pannes (ex. : fichier non transféré) et relancer un service.                                            | Optionnel (peut être contourné temporairement) |
 | **Déploiement en production**                    | ✅ **Oui** (via pipeline automatisé + validation)          | Autonomie pour livrer des corrections **sans attendre un processus manuel**.                                               | **Critique**                                   |
+| **sauvegarde** (dump,snapshot ) | ✅ **Oui** (lecture)                            | 
+vérifier l'existence de sauvegarde quotidienne, restaurer une version corrompue
+| optionnel 
+| **certificats** (dns, https) | ✅ **Oui** (lecture, remplacement)                            | 
+vérifier la validité, remplacer un certificat expiré. 
+| **Critique** 
 
 **→ Résumé** :
 
 * **Critique** : Conteneurs, logs, monitoring, bases de données (non-prod), déploiement en staging/prod via pipeline.
 
-* **Optionnel** : Services tiers (peut être géré par SI en cas de blocage).
+* **Optionnel** : Services tiers (peut être géré par SGI en cas de blocage).
 
-* **Non nécessaire** : Hardware, VM, orchestration bas niveau.
+* **Non nécessaire** : Hardware, VM, orchestration bas niveau, sauvegarde.
 
 ***
 
